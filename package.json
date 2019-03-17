@@ -1,6 +1,6 @@
 {
   "name": "sylvent",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "events",
   "repository": "https://github.com/Brecert/sylvent.git",
   "author": "Bree Newfile",
@@ -22,7 +22,7 @@
     "build": "pack build",
     "test": "mocha --require ts-node/register test/**/*.spec.ts",
     "preversion": "yarn build && yarn test",
-    "postversion": "git push --tags && yarn publish pkg --tag %npm_package_version% && git push && echo \"Successfully released version %npm_package_version%!\""
+    "postversion": "git add pkg && git push --tags && yarn publish pkg --tag %npm_package_version% && git push && echo \"Successfully released version %npm_package_version%!\""
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
