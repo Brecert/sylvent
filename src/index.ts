@@ -1,3 +1,3 @@
-import Emitter from './Emitter'
-export default Emitter
-export { Emitter }
+import SylventEmitter from './SylventEmitter'
+export default SylventEmitter
+export { default as FancySylventEmitter } from './FancySylventEmitter'

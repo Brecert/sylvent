@@ -4,6 +4,7 @@ import { expect } from 'chai'
 
 describe('Emitter', function() {
   let emitter = new Emitter()
+  let emitCount = 0
 
   it('should be created', function() {
     expect(emitter).to.exist
@@ -12,6 +13,8 @@ describe('Emitter', function() {
   describe('#on', function() {
     it('should listen to emit', function() {
       emitter.on('test', event => {
+        emitCount += 1
+
         expect(event).to.equal('hello world')
       })
     })
@@ -24,11 +27,19 @@ describe('Emitter', function() {
   })
 
   describe('#removeListener', function() {
-    it('should remove event after emit', function() {
+    it('should remove all test events after emit', function() {
       emitter.on('test', event => {
-        emitter.removeListener('test')
+        let removed = emitter.removeListener('test')
+        expect(removed).to.be.true
+        expect(emitter._listeners).to.be.empty
+      })
+      
+      it('should no longer activate on emit', function() {
+        emitter.emit('test', 'second emit')
+        expect(emitCount).to.eq(1)
       })
     })
+
   })
 
 })
