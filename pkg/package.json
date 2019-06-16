@@ -7,9 +7,6 @@
     "dist-*/",
     "bin/"
   ],
-  "esnext": "dist-src/index.js",
-  "main": "dist-node/index.js",
-  "types": "dist-types/index.d.ts",
   "pika": true,
   "sideEffects": false,
   "repository": "https://github.com/Brecert/sylvent.git",
@@ -30,5 +27,8 @@
     "mocha": "^6.0.0",
     "ts-node": "^8.0.2",
     "typescript": "^3.3.3"
-  }
+  },
+  "esnext": "dist-src/index.js",
+  "main": "dist-node/index.js",
+  "types": "dist-types/index.d.ts"
 }
