@@ -56,5 +56,5 @@ class Emitter {
 
 }
 
-exports.default = Emitter;
 exports.Emitter = Emitter;
+exports.default = Emitter;
