@@ -20,7 +20,9 @@
   },
   "scripts": {
     "build": "pack build",
-    "test": "mocha --require ts-node/register test/**/*.spec.ts"
+    "test": "mocha --require ts-node/register test/**/*.spec.ts",
+    "publish": "yarn build && yarn test && pack publish",
+    "version": "yarn run build"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
